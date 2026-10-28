@@ -1,0 +1,520 @@
+/* ==========================================
+   FONDO Y CONTENEDOR PRINCIPAL
+========================================== */
+
+.umss-auth-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(circle at center, #1b4332 0%, #0f291e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+
+/* Círculos decorativos de fondo */
+
+.bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(183, 228, 199, 0.06);
+    pointer-events: none;
+}
+
+.c1 {
+    width: 90px;
+    height: 90px;
+    top: 8%;
+    right: 6%;
+}
+
+.c2 {
+    width: 80px;
+    height: 80px;
+    bottom: 10%;
+    left: 5%;
+}
+
+.c3 {
+    width: 40px;
+    height: 40px;
+    top: 25%;
+    left: 4%;
+}
+
+
+/* ==========================================
+   TARJETA PRINCIPAL DIVIDIDA
+========================================== */
+
+.umss-card {
+    width: 100%;
+    max-width: 980px;
+    min-height: 620px;
+    background-color: #132a21;
+    border-radius: 32px;
+    display: flex;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ==========================================
+   PANEL IZQUIERDO (CLARO)
+========================================== */
+
+.umss-left-panel {
+    width: 46%;
+    background: linear-gradient(145deg, #ffffff 0%, #f1f7f4 100%);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #1b4332;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+
+/* En el login tiene bordes redondeados pronunciados a la derecha */
+
+.is-login .umss-left-panel {
+    border-top-right-radius: 48px;
+    border-bottom-right-radius: 48px;
+}
+
+
+/* En el registro tiene un corte más estilizado */
+
+.is-signup .umss-left-panel {
+    width: 42%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 80px;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.brand-icon.light-icon {
+    background-color: #b7efc5;
+    color: #0f291e;
+}
+
+.brand-icon.dark-icon {
+    background-color: #132a21;
+    color: #b7efc5;
+}
+
+.brand-text h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f291e;
+    letter-spacing: 0.3px;
+}
+
+.brand-text span {
+    font-size: 10px;
+    color: #52796f;
+    font-weight: 600;
+    display: block;
+}
+
+
+/* Ilustración central */
+
+.illustration-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.illustration-box {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(15, 41, 30, 0.12);
+    margin: 0 auto 16px;
+    max-width: 320px;
+    height: 230px;
+    background-color: #d8f3dc;
+}
+
+.illustration-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.illustration-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1b4332;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge-highlight {
+    color: #d97706;
+}
+
+.quote-text {
+    font-size: 12px;
+    font-style: italic;
+    color: #52796f;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 280px;
+}
+
+.quote-author {
+    display: block;
+    font-size: 10px;
+    color: #74958a;
+    margin-top: 6px;
+}
+
+.left-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: #40685c;
+}
+
+.status-active {
+    color: #1b4332;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   PANEL DERECHO (OSCURO / FORMULARIO)
+========================================== */
+
+.umss-right-panel {
+    flex: 1;
+    padding: 40px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.form-content {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.top-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #95d5b2;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.form-content h1 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #95b8a8;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+
+/* Selector de Roles (Píldoras en Registro) */
+
+.role-tabs {
+    display: flex;
+    background-color: #0c1c16;
+    padding: 5px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    gap: 4px;
+}
+
+.role-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #95b8a8;
+    padding: 8px 10px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.2s;
+}
+
+.role-tab.active {
+    background-color: #b7efc5;
+    color: #0c1c16;
+    font-weight: 700;
+}
+
+.active-pill {
+    background-color: #0c1c16;
+    color: #b7efc5;
+    font-size: 8px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+}
+
+
+/* Campos de formulario */
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.label-row label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #e2f1e8;
+}
+
+.label-hint {
+    font-size: 10px;
+    color: #74958a;
+    font-weight: 600;
+}
+
+.label-link {
+    font-size: 11px;
+    color: #95d5b2;
+    cursor: pointer;
+}
+
+.badge-domain {
+    font-size: 9px;
+    background: rgba(149, 213, 178, 0.12);
+    color: #95d5b2;
+    padding: 3px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(149, 213, 178, 0.25);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 0 14px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-wrapper:focus-within {
+    border-color: #95d5b2;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+.input-icon {
+    margin-right: 10px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.input-icon-right {
+    margin-left: 10px;
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+.input-wrapper input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 13px 0;
+    color: #ffffff;
+    font-size: 13px;
+    outline: none;
+}
+
+.input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.toggle-pass,
+.toggle-pass-text {
+    background: none;
+    border: none;
+    color: #95b8a8;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 0;
+}
+
+
+/* Botón Principal Menta */
+
+.btn-submit {
+    width: 100%;
+    background-color: #b7efc5;
+    color: #0f291e;
+    border: none;
+    border-radius: 24px;
+    padding: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: transform 0.15s, background-color 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background-color: #a3e6b4;
+    transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* Alertas de Error / Éxito */
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.alert-success {
+    background: rgba(183, 239, 197, 0.15);
+    border: 1px solid rgba(183, 239, 197, 0.4);
+    color: #b7efc5;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+
+/* Cambio entre Login y Registro */
+
+.switch-container {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #95b8a8;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: #b7efc5;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    font-size: 12px;
+}
+
+
+/* Footers del lado derecho */
+
+.right-footer-links {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 11px;
+    color: #74958a;
+}
+
+.support-text {
+    margin-top: 8px;
+    color: #95b8a8;
+}
+
+.support-text strong {
+    color: #b7efc5;
+}
+
+.right-footer-signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 10px;
+    color: #74958a;
+}
+
+
+/* ==========================================
+   RESPONSIVE (MÓVILES Y TABLETS)
+========================================== */
+
+@media (max-width: 820px) {
+    .umss-card {
+        flex-direction: column;
+    }
+    .umss-left-panel,
+    .is-signup .umss-left-panel {
+        width: 100%;
+        border-radius: 0 0 32px 32px;
+        padding: 24px;
+    }
+    .umss-right-panel {
+        padding: 32px 24px;
+    }
+}

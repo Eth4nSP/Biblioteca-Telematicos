@@ -1,0 +1,280 @@
+.slb-contenedor {
+    width: 100%;
+    padding: 24px;
+    color: #1f2937;
+}
+
+.slb-encabezado,
+.slb-tarjeta-encabezado {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.slb-encabezado {
+    margin-bottom: 24px;
+}
+
+.slb-encabezado h1,
+.slb-tarjeta h2 {
+    margin: 0 0 8px;
+}
+
+.slb-encabezado p,
+.slb-tarjeta p {
+    margin: 4px 0;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.slb-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.slb-estadistica {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    color: #475569;
+    text-align: left;
+    cursor: pointer;
+}
+
+.slb-estadistica strong {
+    color: #0f172a;
+    font-size: 28px;
+}
+
+.slb-estadistica.seleccionada {
+    border-color: #64748b;
+    box-shadow: 0 0 0 1px #64748b;
+}
+
+.slb-filtros {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    align-items: end;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.slb-filtros label,
+.slb-respuesta label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.slb-filtros input,
+.slb-filtros select,
+.slb-respuesta textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    color: #0f172a;
+    font: inherit;
+}
+
+.slb-listado {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.slb-tarjeta {
+    padding: 22px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgb(15 23 42 / 4%);
+}
+
+.slb-tarjeta h2 {
+    color: #0f172a;
+    font-size: 19px;
+}
+
+.slb-estado {
+    flex-shrink: 0;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.slb-estado-pendiente {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.slb-estado-aprobada {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.slb-estado-rechazada {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.slb-periodo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.slb-periodo>div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 14px;
+    border-radius: 9px;
+    background: #f8fafc;
+}
+
+.slb-periodo span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.slb-periodo strong {
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.slb-detalles {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.slb-respuesta {
+    margin-top: 18px;
+}
+
+.slb-acciones {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.slb-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.slb-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.slb-btn-secundario {
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #334155;
+}
+
+.slb-btn-aprobar {
+    background: #166534;
+    color: #fff;
+}
+
+.slb-btn-rechazar {
+    background: #fff;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+}
+
+.slb-alerta {
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.slb-alerta-exito {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.slb-alerta-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.slb-vacio,
+.slb-cargando {
+    padding: 36px 20px;
+    text-align: center;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    color: #64748b;
+}
+
+.slb-spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #cbd5e1;
+    border-top-color: #334155;
+    border-radius: 50%;
+    animation: slb-girar 0.8s linear infinite;
+}
+
+@keyframes slb-girar {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .slb-estadisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .slb-filtros {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .slb-contenedor {
+        padding: 14px;
+    }
+    .slb-encabezado,
+    .slb-tarjeta-encabezado {
+        flex-direction: column;
+    }
+    .slb-periodo {
+        grid-template-columns: 1fr;
+    }
+    .slb-acciones {
+        flex-direction: column-reverse;
+    }
+    .slb-acciones .slb-btn {
+        width: 100%;
+    }
+}

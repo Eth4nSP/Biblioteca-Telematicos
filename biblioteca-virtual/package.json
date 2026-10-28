@@ -1,0 +1,48 @@
+{
+    "name": "biblioteca-virtual",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "main": "electron/main.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "electron:dev": "cross-env NODE_ENV=development concurrently \"npm run dev\" \"wait-on tcp:5173 && electron .\"",
+        "dist": "electron-builder"
+    },
+    "build": {
+        "appId": "com.ethan.biblioteca",
+        "productName": "Biblioteca Digital",
+        "win": {
+            "target": "nsis"
+        }
+    },
+    "dependencies": {
+        "@supabase/supabase-js": "^2.117.2",
+        "epubjs": "^0.3.93",
+        "foliate-js": "^1.0.1",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "react-hot-toast": "^2.6.1",
+        "react-pdf": "^11.0.0",
+        "react-reader": "^2.0.15"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.7",
+        "@vitejs/plugin-react": "^6.1.1",
+        "concurrently": "^10.0.5",
+        "cross-env": "^10.1.0",
+        "electron": "^44.4.5",
+        "electron-builder": "^26.15.3",
+        "eslint": "^10.10.0",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "eslint-plugin-react-refresh": "^0.5.6",
+        "globals": "^17.12.0",
+        "vite": "^8.3.0",
+        "wait-on": "^9.1.0"
+    }
+}

@@ -1,0 +1,685 @@
+/* =========================================================
+   MIS COLECCIONES ESTUDIANTE ("BOSQUE DEL SABER")
+   ========================================================= */
+
+.ce-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4px 0 40px;
+    color: var(--text-primary);
+    box-sizing: border-box;
+}
+
+.ce-container * {
+    box-sizing: border-box;
+}
+
+
+/* HERO BANNER CON CAJA DE CÓDIGO INTEGRADA */
+
+.ce-hero {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 28px;
+    align-items: center;
+    background: var(--bg-hero);
+    color: #ffffff;
+    padding: 34px 38px;
+    border-radius: 26px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-md);
+}
+
+.ce-hero-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.ce-eyebrow {
+    display: inline-block;
+    background: rgba(188, 235, 215, 0.16);
+    color: #bbf0da;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(188, 235, 215, 0.25);
+}
+
+.ce-hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+.ce-hero p {
+    margin: 0 0 18px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.94rem;
+    line-height: 1.6;
+    max-width: 560px;
+}
+
+.ce-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ce-hero-pill {
+    background: rgba(255, 255, 255, 0.12);
+    color: #e2f8ee;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.ce-hero-pill.active {
+    background: rgba(16, 185, 129, 0.28);
+    color: #a7f3d0;
+    border-color: rgba(167, 243, 208, 0.4);
+}
+
+
+/* CAJA DE UNIRSE CON CÓDIGO (GLASSMORPHISM) */
+
+.ce-join-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.ce-join-box-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ce-join-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: rgba(188, 235, 215, 0.2);
+    display: grid;
+    place-items: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.ce-join-box-header h2 {
+    margin: 0 0 2px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.ce-join-box-header p {
+    margin: 0;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.ce-join-form {
+    display: flex;
+    gap: 10px;
+}
+
+.ce-join-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(9, 24, 19, 0.45);
+    color: #ffffff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ce-join-form input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.1em;
+}
+
+.ce-join-form input:focus {
+    border-color: #6ee7b7;
+    background: rgba(9, 24, 19, 0.68);
+}
+
+
+/* BOTONES */
+
+.ce-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ce-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.ce-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.ce-button-primary {
+    width: 100%;
+    background: #16382c;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .ce-button-primary {
+    background: #34d399;
+    color: #091d16;
+}
+
+.ce-button-primary:hover:not(:disabled) {
+    opacity: 0.93;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.22);
+}
+
+.ce-button-active-state {
+    width: 100%;
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ce-button-mint {
+    background: #bbf0da;
+    color: #0f3526;
+    white-space: nowrap;
+}
+
+.ce-button-mint:hover:not(:disabled) {
+    background: #a3e2c7;
+}
+
+.ce-button-refresh {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 7px 14px;
+    min-height: 34px;
+    font-size: 0.78rem;
+}
+
+.ce-button-close {
+    background: var(--bg-surface-soft);
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+}
+
+.ce-button-close:hover {
+    background: var(--danger-bg);
+    color: var(--danger-text);
+    border-color: transparent;
+}
+
+
+/* SECCIÓN DE COLECCIONES */
+
+.ce-section {
+    margin: 28px 0;
+}
+
+.ce-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.ce-section-heading h2 {
+    margin: 0 0 4px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.ce-section-heading p {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+.ce-count-badge {
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+}
+
+.ce-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.ce-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 22px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 22px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ce-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.ce-card-activa {
+    border: 2px solid var(--accent-emerald);
+    box-shadow: var(--shadow-md);
+}
+
+.ce-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ce-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.ce-mode-badge {
+    background: var(--bg-surface-soft);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 11px;
+    border-radius: 999px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.ce-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ce-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.ce-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    overflow-wrap: anywhere;
+}
+
+.ce-card p {
+    margin: 0 0 20px;
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.ce-card-footer {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+
+/* ESTANTERÍA DE LIBROS DE LA COLECCIÓN SELECCIONADA */
+
+.ce-books-section {
+    margin-top: 32px;
+    padding: 28px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 26px;
+    box-shadow: var(--shadow-md);
+}
+
+.ce-books-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.ce-books-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--accent-emerald);
+    margin-bottom: 4px;
+}
+
+.ce-books-title-group h2 {
+    margin: 0 0 4px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.ce-books-title-group p {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+
+/* BUSCADOR INTERNO DE LIBROS */
+
+.ce-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-surface-soft);
+    border: 1px solid var(--border-subtle);
+    padding: 7px 10px 7px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    transition: border-color 0.2s ease;
+}
+
+.ce-search-bar:focus-within {
+    border-color: var(--accent-emerald);
+}
+
+.ce-search-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.ce-search-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.ce-search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.ce-search-clear {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.ce-search-count {
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* GRILLA DE LIBROS */
+
+.ce-books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.ce-book-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg-surface-soft);
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ce-book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.ce-book-cover-wrap {
+    width: 100%;
+    height: 210px;
+    background: var(--bg-input);
+    overflow: hidden;
+}
+
+.ce-book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ce-book-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.ce-book-placeholder span {
+    font-size: 2.6rem;
+}
+
+.ce-book-placeholder small {
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+}
+
+.ce-book-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.ce-book-badge {
+    align-self: flex-start;
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+}
+
+.ce-book-info h3 {
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.ce-book-info p {
+    margin: 0 0 14px;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+}
+
+.ce-book-info .ce-button {
+    margin-top: auto;
+}
+
+
+/* ESTADOS VACÍOS Y ALERTAS */
+
+.ce-empty {
+    padding: 44px 24px;
+    text-align: center;
+    background: var(--bg-surface);
+    border: 1px dashed var(--border-strong);
+    border-radius: 22px;
+}
+
+.ce-empty-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.ce-empty h3 {
+    margin: 0 0 8px;
+    color: var(--text-primary);
+}
+
+.ce-empty p {
+    margin: 0 auto;
+    max-width: 460px;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.ce-alert {
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.ce-error {
+    color: var(--danger-text);
+    background: var(--danger-bg);
+}
+
+.ce-success {
+    color: var(--accent-mint-text);
+    background: var(--accent-mint);
+}
+
+.ce-books-pagination {
+    margin-top: 24px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+    .ce-hero {
+        grid-template-columns: 1fr;
+        padding: 26px;
+    }
+}
+
+@media (max-width: 650px) {
+    .ce-join-form {
+        flex-direction: column;
+    }
+    .ce-books-section {
+        padding: 18px;
+    }
+    .ce-search-bar {
+        flex-wrap: wrap;
+        border-radius: 18px;
+    }
+    .ce-search-count {
+        width: 100%;
+        text-align: center;
+    }
+    .ce-books-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+    .ce-book-cover-wrap {
+        height: 160px;
+    }
+}
+
+@media (max-width: 420px) {
+    .ce-books-grid {
+        grid-template-columns: 1fr;
+    }
+}

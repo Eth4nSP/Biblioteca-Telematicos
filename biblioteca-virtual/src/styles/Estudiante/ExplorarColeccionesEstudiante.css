@@ -1,0 +1,616 @@
+/* =========================================================
+   EXPLORAR COLECCIONES ESTUDIANTE ("BOSQUE DEL SABER")
+   ========================================================= */
+
+.ece-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 4px 0 36px;
+    color: var(--text-primary);
+}
+
+
+/* HERO ENCABEZADO Y BUSCADOR FLOTANTE */
+
+.ece-hero {
+    background: var(--bg-hero);
+    color: #ffffff;
+    padding: 32px 36px 28px;
+    border-radius: 26px;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ece-hero-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ece-hero-text {
+    max-width: 680px;
+}
+
+.ece-eyebrow {
+    display: inline-block;
+    background: rgba(188, 235, 215, 0.16);
+    color: #bbf0da;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin: 0 0 12px;
+    border: 1px solid rgba(188, 235, 215, 0.25);
+}
+
+.ece-hero h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.75rem, 3vw, 2.35rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+
+.ece-hero p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+
+/* BARRA DE BÚSQUEDA FLOTANTE ESTILO MOCKUP */
+
+.ece-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 8px 10px 8px 16px;
+    border-radius: 999px;
+    box-shadow: 0 10px 26px rgba(9, 24, 19, 0.16);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ece-search-bar:focus-within {
+    border-color: var(--accent-emerald);
+    box-shadow: 0 10px 28px rgba(16, 185, 129, 0.2);
+}
+
+.ece-search-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    display: grid;
+    place-items: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.ece-search-input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 0.92rem;
+    outline: none;
+}
+
+.ece-search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.ece-search-clear {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-surface-soft);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 0.78rem;
+}
+
+.ece-search-clear:hover {
+    background: var(--danger-bg);
+    color: var(--danger-text);
+}
+
+.ece-search-badge {
+    background: var(--bg-surface-soft);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* TOOLBAR Y PÍLDORAS DE FILTRO */
+
+.ece-toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+}
+
+.ece-section-heading h2 {
+    margin: 0 0 4px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.ece-section-heading p {
+    margin: 0;
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+.ece-filter-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    background: var(--bg-surface);
+    padding: 5px;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+}
+
+.ece-pill {
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 7px 15px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ece-pill:hover:not(.activo) {
+    color: var(--text-primary);
+    background: var(--bg-surface-soft);
+}
+
+.ece-pill.activo {
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+
+/* GRILLA Y TARJETAS BENTO DE COLECCIONES */
+
+.ece-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.ece-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ece-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-strong);
+}
+
+.ece-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.ece-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.ece-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ece-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.ece-card-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.18rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.ece-description {
+    margin: 0 0 20px;
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* ESTADOS Y BADGES */
+
+.ece-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--bg-surface-soft);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.ece-status-success {
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+    border-color: transparent;
+}
+
+.ece-status-pending {
+    background: var(--amber-bg);
+    color: var(--amber-text);
+    border-color: transparent;
+}
+
+.ece-status-rejected {
+    background: var(--danger-bg);
+    color: var(--danger-text);
+    border-color: transparent;
+}
+
+
+/* PIE DE TARJETA Y BOTONES */
+
+.ece-card-footer {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.ece-access-granted {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: var(--bg-surface-soft);
+    border: 1px solid var(--border-subtle);
+}
+
+.ece-access-dot {
+    color: var(--accent-emerald);
+    font-size: 0.9rem;
+}
+
+.ece-note {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+.ece-note strong {
+    color: var(--text-primary);
+}
+
+.ece-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ece-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.ece-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.ece-button-primary {
+    background: #16382c;
+    color: #ffffff;
+}
+
+[data-theme="dark"] .ece-button-primary {
+    background: #34d399;
+    color: #091d16;
+}
+
+.ece-button-primary:hover:not(:disabled) {
+    opacity: 0.93;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.22);
+}
+
+.ece-button-pending {
+    background: var(--amber-bg);
+    color: var(--amber-text);
+}
+
+.ece-button-refresh {
+    width: auto;
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(8px);
+}
+
+.ece-button-refresh:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.24);
+}
+
+
+/* ESTADO VACÍO Y ALERTAS */
+
+.ece-empty {
+    padding: 48px 24px;
+    background: var(--bg-surface);
+    border: 1px dashed var(--border-strong);
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.ece-empty-icon {
+    font-size: 2.6rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ece-empty h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.ece-empty p {
+    margin: 0 auto;
+    max-width: 460px;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.ece-alert {
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ece-error {
+    background: var(--danger-bg);
+    color: var(--danger-text);
+}
+
+.ece-success {
+    background: var(--accent-mint);
+    color: var(--accent-mint-text);
+}
+
+.ece-pagination {
+    background: var(--bg-surface);
+    padding: 16px 22px;
+    border-radius: 18px;
+    border: 1px solid var(--border-subtle);
+    margin-top: 26px;
+}
+
+@media (max-width: 640px) {
+    .ece-hero {
+        padding: 24px 20px;
+    }
+    .ece-search-bar {
+        flex-wrap: wrap;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .ece-search-badge {
+        width: 100%;
+        text-align: center;
+    }
+    .ece-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   ENCABEZADO — SOLICITUDES DE COLECCIONES
+   Compatible con Bosque del Saber: modo claro y oscuro
+   ========================================================= */
+
+.docente-layout .scd-page-header {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding: clamp(24px, 4vw, 38px);
+    background: radial-gradient( circle at 92% 12%, var(--d-glow), transparent 38%), linear-gradient( 135deg, var(--d-surface), var(--d-surface-soft));
+    border: 1px solid var(--d-border);
+    border-radius: 24px;
+    box-shadow: var(--d-shadow);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Decoración botánica */
+
+.docente-layout .scd-page-header::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 190px;
+    height: 190px;
+    top: -90px;
+    right: -45px;
+    border: 1px solid var(--d-border);
+    border-radius: 50%;
+    box-shadow: 0 0 0 20px var(--d-surface-soft), 0 0 0 21px var(--d-border), 0 0 0 42px var(--d-surface);
+    opacity: 0.65;
+    pointer-events: none;
+}
+
+.docente-layout .scd-page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: var(--d-accent-text);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.docente-layout .scd-page-eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--d-accent);
+    border-radius: 999px;
+}
+
+.docente-layout .scd-page-title {
+    max-width: 850px;
+    margin: 0;
+    color: var(--d-text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.12;
+    text-wrap: balance;
+}
+
+.docente-layout .scd-page-description {
+    max-width: 680px;
+    margin: 0;
+    color: var(--d-muted);
+    font-size: 0.96rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-wrap: pretty;
+}
+
+
+/* Indicador decorativo inferior */
+
+.docente-layout .scd-page-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: min(180px, 35%);
+    height: 3px;
+    background: linear-gradient( 90deg, var(--d-accent), transparent);
+    border-radius: 0 999px 0 24px;
+}
+
+
+/* Ajustes para pantallas pequeñas */
+
+@media (max-width: 640px) {
+    .docente-layout .scd-page-header {
+        gap: 10px;
+        margin-bottom: 22px;
+        padding: 24px 20px;
+        border-radius: 18px;
+    }
+    .docente-layout .scd-page-title {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+    }
+    .docente-layout .scd-page-description {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+    .docente-layout .scd-page-header::before {
+        width: 130px;
+        height: 130px;
+        top: -65px;
+        right: -40px;
+    }
+}
